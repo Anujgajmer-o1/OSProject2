@@ -62,7 +62,7 @@ func printPrompt(w io.Writer) error {
 		"fmt"
 		"os"
 		"strings"
-		"github.com/CoolStudent123/CSCE4600/Project2/builtins"
+		"github.com/Anujgajmer-o1/OSProject2/Project2/builtin"
 	)
 	
 	func main() {
