@@ -120,6 +120,29 @@ func handleInput(w io.Writer, input string, exit chan<- struct{}) error {
 
 	return executeCommand(name, args...)
 }
+switch name {
+case "cd":
+    return builtins.ChangeDirectory(args...)
+case "env":
+    return builtins.EnvironmentVariables(w, args...)
+case "exit":
+    exit <- struct{}{}
+    return nil
+case "listdir":
+    return builtins.ListDir(args...)
+case "makefile":
+    return builtins.MakeFile(args...)
+case "countlines":
+    return builtins.CountLines(args...)
+case "renamefile":
+    return builtins.RenameFile(args...)
+case "fileinfo":
+    return builtins.FileInfo(args...)
+default:
+    fmt.Println("Unknown command:", name)
+    return nil
+}
+
 
 func executeCommand(name string, arg ...string) error {
 	// Otherwise prep the command
