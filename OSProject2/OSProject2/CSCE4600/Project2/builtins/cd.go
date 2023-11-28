@@ -24,3 +24,21 @@ func ChangeDirectory(args ...string) error {
 		return fmt.Errorf("%w: expected zero or one arguments (directory)", ErrInvalidArgCount)
 	}
 }
+package builtins
+
+import (
+	"os"
+)
+
+func Cd(args []string) {
+	if len(args) < 2 {
+		fmt.Println("cd: missing argument")
+		return
+	}
+
+	err := os.Chdir(args[1])
+	if err != nil {
+		fmt.Printf("cd: %v\n", err)
+	}
+}
+
