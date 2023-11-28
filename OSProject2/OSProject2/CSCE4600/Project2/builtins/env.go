@@ -37,3 +37,16 @@ func EnvironmentVariables(w io.Writer, args ...string) error {
 
 	return err
 }
+package builtins
+
+import (
+	"os"
+	"fmt"
+)
+
+func Env() {
+	for _, env := range os.Environ() {
+		fmt.Println(env)
+	}
+}
+
