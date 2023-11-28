@@ -1,0 +1,10 @@
+package builtins
+
+import (
+	"fmt"
+)
+
+func YourCommand1(args []string) {
+	// Implementation for your_command_1
+	fmt.Println("Executing your_command_1")
+}
