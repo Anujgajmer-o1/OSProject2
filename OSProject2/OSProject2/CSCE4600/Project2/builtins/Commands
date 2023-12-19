@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"io/ioutil"
+	"bufio"
 )
 
 // RenameFile is a shell builtin to rename or move a file to a different location.
