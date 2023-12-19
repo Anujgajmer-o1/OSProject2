@@ -1,4 +1,4 @@
-// builtins/renamefile.go
+
 package builtins
 
 import (
@@ -35,6 +35,18 @@ func MakeFile(args ...string) error {
 		return err
 	}
 	defer file.Close()
+
+	return nil
+}
+func ListDir(args ...string) error {
+	files, err := ioutil.ReadDir(".")
+	if err != nil {
+		return err
+	}
+
+	for _, file := range files {
+		fmt.Println(file.Name())
+	}
 
 	return nil
 }
